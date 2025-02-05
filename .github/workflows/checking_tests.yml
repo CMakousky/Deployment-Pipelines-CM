@@ -32,6 +32,8 @@ jobs:
       #   run: npm run start
 
       - name: Run Cypress tests
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v6
         with: 
           component: true
