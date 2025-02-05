@@ -20,12 +20,14 @@ jobs:
         with:
           node-version: 21.x
 
-      - name: Test
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      -name: Install and Build
         run: |
           npm install
           npm run build
+
+      - name: Test
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v6
         with: 
           component: true
