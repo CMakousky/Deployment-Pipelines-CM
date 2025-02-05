@@ -26,11 +26,16 @@ jobs:
       - name: Build App
         run: npm run build
 
-      - name: Run App
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-        run: npm run start
+      # - name: Run App
+      #   env:
+      #     MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      #   run: npm run start
 
       - name: Run Cypress tests
-        run: npm run test-component
+        uses: cypress-io/github-action@v6
+        with: 
+          component: true
+          start: npm run start
+          wait-on: "http://localhost:3001"
+        # run: npm run test-component
 
