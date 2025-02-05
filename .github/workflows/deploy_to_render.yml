@@ -12,11 +12,25 @@ jobs:
     name: Deploy To Render
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.x
+
       - name: Test
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: |
           npm install
-          npm run test
+          npm run build
+        uses: cypress-io/github-action@v6
+        with: 
+          component: true
+          start: npm run start
+          wait-on: "http://localhost:3001"
 
       - name: Deploy
         # Only run this step if the branch is main
