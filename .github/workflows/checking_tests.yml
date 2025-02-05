@@ -27,6 +27,8 @@ jobs:
         run: npm run build
 
       - name: Run App
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: npm run start
 
       - name: Run Cypress tests
