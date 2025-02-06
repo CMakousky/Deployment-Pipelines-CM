@@ -1,18 +1,38 @@
 # Deployment-Pipelines-CM
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## User Story
+## Description
 
-```md
-AS A developer looking to integrate a pipeline in a codebase for continuous integration and deployment, 
-I WANT to create a GitHub Action that will follow best practices by running test cases when a Pull Request is made to the develop branch
-SO THAT I can ensure that all code integrations are clean and pass the proper requirements.
+A quiz program that allows aspiring developers to test their tech knowledge.
 
-AS A developer looking to deploy the application automatically to Render when code is merged from develop to main,
-I WANT to create a GitHub Action that will run when the code is merged to main and automatically deploys to Render
-SO THAT the application is constantly updated when major releases are made to the main branch.
-```
+![plot](./images/Deployment-Pipelines-CM-Screenshot.jpg)
 
-## Acceptance Criteria
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+- [License](#license)
+
+## Installation
+
+Run the "npm install" script for Node Package Manager to download all of the required dependancy files. Configure the .env file for your system specifications. Execute the "npm run build" script to transpile the typescript code into javascript. Seed the MongoDB NoSQL database with the "npm run seed" script.
+
+## Usage
+
+Execute the "npm run start" script to start the server. Follow the on-screen prompts to test your tech knowledge. See the deployed web application at the following link.
+
+[Deployed Web App](https://deployment-pipelines-cm.onrender.com/)
+
+## Contributing
+
+Contact Christopher Makousky for inqueries on making contributions to this project.
+
+## Tests
+
+Run the "npm run test-component" script to execute the provided Cypress test schema. Alternatively, the "npm run test-gui" script will allow for testing through the Cypress GUI.
 
 ```md
 GIVEN a fullstack application for a web developer,
@@ -29,3 +49,13 @@ THEN I should see those test results on GitHub Action and merge the code
 WHEN I push the code from the develop branch to the main branch
 THEN I should see that another GitHub Action triggers and should automatically deploy to Render
 ```
+
+## Questions
+
+https://github.com/CMakousky
+
+christopher.makousky@gmail.com
+
+## License
+
+MIT License
